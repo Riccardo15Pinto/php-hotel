@@ -38,10 +38,16 @@ $hotels = [
     ],
 
 ];
-
 $park = $_GET['box'] ?? null;
-var_dump($park);
+$vote = $_GET['point'] ?? null;
 
+if ($park == 'on' && $vote) {
+
+    $hotels = array_filter($hotels, function ($var) {
+        // return $var['parking'];
+        return $var['vote'] === $_GET['point'];
+    });
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +64,16 @@ var_dump($park);
 
     <header>
         <form action="" novalidate>
-            <input type="checkbox" name="box">
+            <select name="point">
+                <option value="0">Seleziona voto struttura</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="check">Desideri il parcheggio?</label>
+            <input type="checkbox" name="box" id="check">
             <button>Invia</button>
         </form>
     </header>
