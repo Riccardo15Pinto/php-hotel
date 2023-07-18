@@ -52,32 +52,43 @@ $hotels = [
 </head>
 
 <body>
-    <h1>List Hotels</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Parking</th>
-                <th>Vote</th>
-                <th>Distance to Center</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($hotels as $key => $hotel) : ?>
-                <tr>
-                    <td><?= $hotel['name'] ?></td>
-                    <td><?= $hotel['description'] ?></td>
 
-                    <td>
-                        <i class="<?= $hotel['parking'] ? 'fa-regular fa-circle-check' : 'fa-regular fa-circle-xmark'; ?>"></i>
-                    </td>
-                    <td><?= $hotel['vote'] ?></td>
-                    <td><?= $hotel['distance_to_center'] ?></td>
+    <header>
+        <form action="">
+
+        </form>
+
+    </header>
+
+    <main>
+
+        <h1>List Hotels</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Parking</th>
+                    <th>Vote</th>
+                    <th>Distance to Center</th>
                 </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $key => $hotel) : ?>
+                    <tr>
+                        <td><?= $hotel['name'] ?></td>
+                        <td><?= $hotel['description'] ?></td>
+                        <td>
+                            <i class="<?= $hotel['parking'] ? 'fa-regular fa-circle-check' : 'fa-regular fa-circle-xmark'; ?>"></i>
+                        </td>
+                        <td><?= $hotel['vote'] ?></td>
+                        <td><?= $hotel['distance_to_center'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </main>
 </body>
 
 </html>
