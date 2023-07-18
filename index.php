@@ -41,12 +41,27 @@ $hotels = [
 $park = $_GET['box'] ?? null;
 $vote = $_GET['point'] ?? null;
 
-if ($park == 'on' && $vote) {
+if ($park) {
 
-    $hotels = array_filter($hotels, function ($var) {
-        // return $var['parking'];
-        return $var['vote'] === $_GET['point'];
-    });
+    $filter_hotels = [];
+    foreach ($hotels as $hotel) {
+        if ($hotel['parking']) {
+            $filter_hotels[] = $hotel;
+        }
+    }
+
+    $hotels = $filter_hotels;
+}
+
+if ($vote) {
+    $filter_hotels = [];
+    foreach ($hotels as $hotel) {
+        if ($hotel['vote'] >= $vote) {
+            $filter_hotels[] = $hotel;
+        }
+    }
+
+    $hotels = $filter_hotels;
 }
 ?>
 
