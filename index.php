@@ -38,6 +38,7 @@ $hotels = [
     ],
 
 ];
+
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +47,7 @@ $hotels = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Hotels</title>
 </head>
 
@@ -66,7 +68,10 @@ $hotels = [
                 <tr>
                     <td><?= $hotel['name'] ?></td>
                     <td><?= $hotel['description'] ?></td>
-                    <td><?= $hotel['parking'] ?></td>
+
+                    <td>
+                        <i class="<?= $hotel['parking'] ? 'fa-regular fa-circle-check' : 'fa-regular fa-circle-xmark'; ?>"></i>
+                    </td>
                     <td><?= $hotel['vote'] ?></td>
                     <td><?= $hotel['distance_to_center'] ?></td>
                 </tr>
