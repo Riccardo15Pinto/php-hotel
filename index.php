@@ -39,6 +39,9 @@ $hotels = [
 
 ];
 
+$park = $_GET['box'] ?? null;
+var_dump($park);
+
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +57,9 @@ $hotels = [
 <body>
 
     <header>
-        <form action="">
-
+        <form action="" novalidate>
+            <input type="checkbox" name="box">
+            <button>Invia</button>
         </form>
 
     </header>
