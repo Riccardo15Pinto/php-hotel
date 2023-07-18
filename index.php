@@ -61,13 +61,10 @@ var_dump($park);
             <input type="checkbox" name="box">
             <button>Invia</button>
         </form>
-
     </header>
 
     <main>
-
         <h1>List Hotels</h1>
-
         <table>
             <thead>
                 <tr>
